@@ -1,8 +1,8 @@
 
 <div id="pageCont">
 	<div id="links">
-		<a href="https://github.com/dmihovch" target="_blank" rel="noopener noreferrer">Github</a>
-		<a href="https://www.linkedin.com/in/danielmihovch/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+		<a href="https://github.com/dmihovch" target="_blank" rel="noopener noreferrer"><img class="icons" src="/icons8-github-50.png" alt="Github Logo"></a>
+		<a href="https://www.linkedin.com/in/danielmihovch/" target="_blank" rel="noopener noreferrer"><img class="icons" src="/icons8-linkedin-50.png" alt="Linkedin Logo"></a>
 	</div>
 	
 	<div id="header">
@@ -31,9 +31,12 @@
 	</div>
 	
 	<div id="pages">
-		<a href="/projects">My projects</a>
-		<a href="/resume">My resume</a>
+		<a href="/projects"><img class="icons" src="/icons8-tools-50.png" alt="tools"></a>
+		<a href="/resume"><img class="icons" src="/icons8-resume-50.png" alt="resume"></a>
 	</div>
+</div>
+<div id="credits">
+	<p>Icons provided by <a href="https://icons8.com">icons8.com</a>, thanks!</p>
 </div>
 
 <style>
@@ -79,6 +82,7 @@
 		position:absolute;
 		top:50%;
 		left: 10%;
+		gap: 50px;
 	}
 	#pages {
 		display:flex;
@@ -86,5 +90,18 @@
 		position: absolute;
 		top:50%;
 		left:85%;
+		gap: 50px;
 	}
+	#credits {
+		position: absolute;
+		top:95%;
+	}
+	.icons {
+		filter: invert(1) brightness(2);
+		transition: transform 0.3s ease, filter 0.3s ease-in-out;
+	}
+	.icons:hover {
+		transform: scale(1.1);
+	}
+
 </style>

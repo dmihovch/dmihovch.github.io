@@ -1,6 +1,7 @@
 body{
     background-color: rgb(68, 61, 74);
     color: whitesmoke;
+    overflow: hidden;
 }
 a{
     color: lightblue;
