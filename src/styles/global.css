@@ -2,6 +2,7 @@ body{
     background-color: rgb(68, 61, 74);
     color: whitesmoke;
     overflow: hidden;
+    font-family: 'Fira Code', serif;
 }
 a{
     color: lightblue;

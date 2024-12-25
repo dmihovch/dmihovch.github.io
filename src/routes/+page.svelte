@@ -80,7 +80,7 @@
 		display: flex;
 		flex-direction: column;
 		position:absolute;
-		top:50%;
+		top:40%;
 		left: 10%;
 		gap: 50px;
 	}
@@ -88,13 +88,14 @@
 		display:flex;
 		flex-direction: column;
 		position: absolute;
-		top:50%;
+		top:40%;
 		left:85%;
 		gap: 50px;
 	}
 	#credits {
 		position: absolute;
 		top:95%;
+		right: 1%;
 	}
 	.icons {
 		filter: invert(1) brightness(2);
@@ -102,6 +103,7 @@
 	}
 	.icons:hover {
 		transform: scale(1.1);
+		filter: invert(1) brightness(2) drop-shadow(0px 0px 10px whitesmoke);
 	}
 
 </style>
