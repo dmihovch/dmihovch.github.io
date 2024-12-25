@@ -72,7 +72,7 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
-		border: 2px solid black;
+		border: 2px solid whitesmoke;
 		border-radius: 10px;
 		box-sizing: border-box;
 	}
