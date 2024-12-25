@@ -7,7 +7,7 @@
 </div>
 
 <body>
-    <embed id="resume" title=""src="/Dan-Mihovch-resume-dec24.pdf">
+    <img id="resume" src="/download.png" alt="resume">
 </body>
 
 
@@ -16,8 +16,10 @@
     #resume {
         position: absolute;
         top:7.5%;
-        width:100%;
-        height: 100dvi;
+        left:50%;
+        transform: translateX(-50%);
+        width: auto;
+        height: auto;
         overflow: scroll;
     }
     body{
