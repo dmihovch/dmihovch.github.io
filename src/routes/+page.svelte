@@ -25,8 +25,11 @@
 		</p>
 		<div>
 			<p>Let's Connect, I'd love to talk! You can <a href="mailto:dmihovch@gmail.com">email</a> 
-				me, or connect on any of the socials I've provided! Look forward to hearing from you!
+				me, or connect on any of the socials I've provided. Look forward to hearing from you!
 			</p>
+		</div>
+		<div>
+			<p>This website was last updated Dec 2024. Some info may be out of date</p>
 		</div>
 	</div>
 	

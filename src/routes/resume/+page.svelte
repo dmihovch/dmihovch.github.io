@@ -5,10 +5,9 @@
 <div id="back">
     <Goback/>
 </div>
+<embed id="resume" src="/Dan-Mihovch-resume-dec24.pdf">
 
-<body>
-    <img id="resume" src="/download.png" alt="resume">
-</body>
+
 
 
 
@@ -18,12 +17,9 @@
         top:7.5%;
         left:50%;
         transform: translateX(-50%);
-        width: auto;
-        height: auto;
-        overflow: scroll;
-    }
-    body{
-        overflow:scroll;
+        width: 95dvw;
+        height: 90dvh;
+        border-radius: 10px;
     }
     #back{
         position: absolute;
