@@ -8,3 +8,7 @@
 </svelte:head>
 
 {@render children()}
+
+<footer>
+	<p>Daniel John Mihovch, CS @ University of Delaware</p>
+</footer>
