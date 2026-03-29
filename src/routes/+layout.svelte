@@ -1,6 +1,7 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 	let { children } = $props();
+	import '../app.css';
 
 
 
@@ -44,7 +45,6 @@ import { goto } from '$app/navigation';
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<body>
 
 <div class="terminal">
       {#each history as line}
@@ -58,8 +58,9 @@ import { goto } from '$app/navigation';
     {/each}
     <div class="input-line">
     		<span class="prompt">$</span>
-    		<input
-    			bind:value={input}
+				<input
+					class="term-input-box"
+	  			bind:value={input}
     			onkeydown={handleKey}
     			spellcheck="false"
     		/>
@@ -68,21 +69,31 @@ import { goto } from '$app/navigation';
 
 {@render children()}
 
-</body>
 
-<footer>
+<footer class="footer">
 	<p>Daniel John Mihovch, CS @ University of Delaware</p>
 </footer>
 
 <style>
 
 	.terminal{
+	border: 2px solid yellow;
 		color: lightgreen;
-		background-color: white;
 	}
 
-	body {
-		background-color: black;
-	}
+input:focus{
+	outline: none;
+}
+
+.term-input-box {
+	background-color:black;
+	color:lightgreen;
+	border: 0;
 	
+}
+
+.footer {
+	color:lightgreen;
+}
+
 </style>
