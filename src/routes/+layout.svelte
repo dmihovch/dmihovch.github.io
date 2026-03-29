@@ -11,19 +11,22 @@ import { goto } from '$app/navigation';
 	    type: string;
 	    text: string;
 	  };  
-	  let history: TermHistoryLine[]  = $state([])
+	  let uname: string = "dan";
+	  let hostname: string = "portfolio";
+	  let dir_path:string = "~";
+	  let history: TermHistoryLine[]  = $state([]);
 	  let input = $state("");
 
-	function handleKey(e: KeyboardEvent)
-	{
-	  if(e.key === "Enter")
-	  {
-	    history = runCommand(input);
-	    input = "";
-	  }
-	}
+function handleKey(e: KeyboardEvent)
+{
+  if(e.key === "Enter")
+  {
+    history = runCommand(input);
+    input = "";
+  }
+}
 //this is gonna be a full parser
-	function runCommand(input:string)
+function runCommand(input:string)
 	  {
 	    if(input === "clear") return [];
 	    if(input === "cd projects")
@@ -36,7 +39,7 @@ import { goto } from '$app/navigation';
 	    	goto('/')
 	      return [...history, {type: 'input', text:input}, {type:'output',text:`ran: ${input}`}]
 	    }
-	    return [...history, {type: 'input', text: input}, {type: 'output', text: `ran: ${input}`}]
+	    return [...history, {type: 'input', text: input}, {type: 'output', text: `${input}: command not found`}]
 	  }
 
 </script>
@@ -50,14 +53,14 @@ import { goto } from '$app/navigation';
       {#each history as line}
       <div class={line.type}>
         {#if line.type === "input"}
-          <span class="prompt">$</span> {line.text}
+          <span class="prompt">{uname}@{hostname}:{dir_path}$</span> {line.text}
         {:else}
           {line.text}
         {/if}
       </div>
     {/each}
     <div class="input-line">
-    		<span class="prompt">$</span>
+    		<span class="prompt">{uname}@{hostname}:{dir_path}$</span>
 				<input
 					class="term-input-box"
 	  			bind:value={input}
@@ -76,23 +79,26 @@ import { goto } from '$app/navigation';
 
 <style>
 
-	.terminal{
+.terminal
+{
 	border: 2px solid yellow;
-		color: lightgreen;
-	}
+	color: lightgreen;
+}
 
-input:focus{
+input:focus
+{
 	outline: none;
 }
 
-.term-input-box {
+.term-input-box 
+{
 	background-color:black;
 	color:lightgreen;
 	border: 0;
-	
 }
 
-.footer {
+.footer 
+{
 	color:lightgreen;
 }
 
