@@ -3,10 +3,7 @@
 	let { children } = $props();
 	import '../app.css';
 
-
-
 import { goto } from '$app/navigation';
-
 	  type TermHistoryLine = {
 	    type: string;
 	    text: string;
