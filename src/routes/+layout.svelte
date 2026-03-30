@@ -1,43 +1,26 @@
 <script lang="ts">
+	import { parseInput, type CmdHistory } from '$lib/shell';
+	import { goto } from '$app/navigation';
 	import favicon from '$lib/assets/favicon.ico';
+
 	let { children } = $props();
 	import '../app.css';
 
-import { goto } from '$app/navigation';
-	  type TermHistoryLine = {
-	    type: string;
-	    text: string;
-	  };  
-	  let uname: string = "dan";
-	  let hostname: string = "portfolio";
-	  let dir_path:string = "~";
-	  let history: TermHistoryLine[]  = $state([]);
-	  let input = $state("");
+  let uname: string = "dan";
+  let hostname: string = "portfolio";
+  let dir_path:string = "~";
+  let history: CmdHistory[]  = $state([]);
+  let input = $state("");
 
-function handleKey(e: KeyboardEvent)
-{
-  if(e.key === "Enter")
-  {
-    history = runCommand(input);
-    input = "";
-  }
-}
-//this is gonna be a full parser
-function runCommand(input:string)
+	function handleKey(e: KeyboardEvent)
+	{
+	  if(e.key === 'Enter')
 	  {
-	    if(input === "clear") return [];
-	    if(input === "cd projects")
-	    {
-	      goto('projects');
-	      return [...history, {type: 'input', text:input}, {type:'output',text:`ran: ${input}`}]
-	    }
-	    if(input === "cd home")
-	    {
-	    	goto('/')
-	      return [...history, {type: 'input', text:input}, {type:'output',text:`ran: ${input}`}]
-	    }
-	    return [...history, {type: 'input', text: input}, {type: 'output', text: `${input}: command not found`}]
+	    history.push(parseInput(input));
+	    input = '';
 	  }
+	}
+
 
 </script>
 

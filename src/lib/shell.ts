@@ -1,3 +1,4 @@
+import { goto } from "$app/navigation";
 
 export type CmdType = 'input' | 'output' | 'noop' ;
 
@@ -9,20 +10,17 @@ export type CmdHistory = {
 
 export function parseInput(raw_cmd:string): CmdHistory
 {
-    let tokens:string[] = tokenizeInput(raw_cmd);
+    let tokens:string[] = raw_cmd.split(' ');
     if(tokens.length === 0)
     {
       return {type: 'noop', text: '', return_code: 0};
     }
-
+    let result: CmdHistory = runCmd(tokens);
+    
 }
 
-function tokenizeInput(raw_cmd: string): string[]
-{
-  return raw_cmd.split(' ');
-}
 
-function runCmd(tokens:string[]): number
+function runCmd(tokens:string[]): CmdHistory
 {
   if(tokens[0] === 'cd')
   {
@@ -34,11 +32,12 @@ function runCmd(tokens:string[]): number
   }
 }
 
-function cmd_cd(args: string[]): number
+function cmd_cd(args: string[]): CmdHistory
 {
+
   return 0;
 }
-function cmd_ls(args: string[]): number
+function cmd_ls(args: string[]): CmdHistory
 {
   return 0;
 }
