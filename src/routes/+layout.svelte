@@ -175,7 +175,11 @@
 		}
 
 		const names = ok && node.children ? node.children.map((c) => c.name) : [];
-		const matches = names.filter((name) => name.startsWith(base));
+		const candidates =
+			command === 'cd'
+				? node.children?.filter((c) => c.type === 'dir').map((c) => c.name) ?? []
+				: names;
+		const matches = candidates.filter((name) => name.startsWith(base));
 
 		if (matches.length === 1) {
 			const prefix = raw.slice(0, raw.length - partial.length);

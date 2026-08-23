@@ -23,22 +23,6 @@ export const root: FSNode = {
 		dir('home', [
 			dir('dan', [
 				file('about.txt', ['daniel mihovch', 'cs @ university of delaware'].join('\n')),
-				file(
-					'resume.txt',
-					[
-						'daniel mihovch',
-						'cs @ university of delaware',
-						'',
-						'education',
-						'',
-						'experience',
-						'',
-						'skills',
-						'',
-						'contact'
-					].join('\n')
-				),
-				file('transcript.txt', ['university of delaware', 'daniel mihovch'].join('\n')),
 				doc('resume.pdf', '/Daniel_Mihovch_Resume.pdf'),
 				doc('transcript.pdf', '/SSR_TSRPT.pdf'),
 				dir('projects', [
