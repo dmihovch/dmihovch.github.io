@@ -1,5 +1,10 @@
 node_modules
 
+# npm cache artifacts
+_cacache
+_logs
+_npmcache
+
 # Output
 .output
 .vercel
