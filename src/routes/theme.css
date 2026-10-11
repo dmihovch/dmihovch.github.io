@@ -1,0 +1,216 @@
+/* Retro dark theme for the site. Tokens live on .site and cascade to its
+   descendants. */
+
+.site {
+	--site-bg: #1a1c20;
+	--site-panel: #212429;
+	--site-panel-raised: #262a30;
+	--site-border: #3a3f47;
+	--site-edge-light: #33383f;
+	--site-edge-dark: #121418;
+	--site-fg: #d5d8dd;
+	--site-muted: #969ba4;
+	--site-accent: #8f9bff;
+	--site-accent-strong: #b0b9ff;
+	--site-accent-visited: #b39dff;
+	--site-accent-contrast: #14151b;
+	--site-font: 'Iosevka', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	--site-bevel: inset 1px 1px 0 var(--site-edge-light), inset -1px -1px 0 var(--site-edge-dark);
+	--site-bevel-pressed:
+		inset -1px -1px 0 var(--site-edge-light), inset 1px 1px 0 var(--site-edge-dark);
+
+	min-height: 100vh;
+	min-height: 100dvh;
+	background: var(--site-bg);
+	color: var(--site-fg);
+	font-family: var(--site-font);
+	font-size: 16px;
+	line-height: 1.7;
+	color-scheme: dark;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+.site ::selection {
+	background: var(--site-accent);
+	color: var(--site-accent-contrast);
+}
+
+.site a {
+	color: var(--site-accent);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.site a:visited {
+	color: var(--site-accent-visited);
+}
+
+.site a:hover {
+	background: var(--site-accent);
+	color: var(--site-accent-contrast);
+	text-decoration: none;
+}
+
+.site :focus-visible {
+	outline: 2px solid var(--site-accent);
+	outline-offset: 2px;
+}
+
+.site code {
+	font-family: var(--site-font);
+	background: var(--site-panel-raised);
+	border: 1px solid var(--site-border);
+	padding: 0.05rem 0.35rem;
+}
+
+.site hr {
+	border: 0;
+	border-top: 1px dashed var(--site-border);
+}
+
+/* header */
+.site .topbar {
+	background: var(--site-panel);
+	border-bottom: 2px solid var(--site-border);
+}
+
+.site .menu {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 52rem;
+	margin: 0 auto -1px;
+}
+
+.site .menu a {
+	display: block;
+	padding: 0.7rem 1rem;
+	border-right: 1px solid var(--site-border);
+	border-bottom: 1px solid var(--site-border);
+	color: var(--site-accent);
+	text-decoration: none;
+}
+
+.site .menu a:visited {
+	color: var(--site-accent);
+}
+
+.site .menu a:hover {
+	background: var(--site-accent);
+	color: var(--site-accent-contrast);
+}
+
+.site .menu a[aria-current='page'] {
+	background: var(--site-panel-raised);
+	color: var(--site-accent-strong);
+}
+
+.site .menu .brand {
+	font-weight: 700;
+}
+
+/* content */
+.site main {
+	max-width: 52rem;
+	margin: 0 auto;
+	padding: 2.5rem 1.5rem 5rem;
+	overflow-wrap: break-word;
+}
+
+.site main h1 {
+	font-size: 1.7rem;
+	margin: 0 0 0.75rem;
+	letter-spacing: 0.01em;
+}
+
+.site main h2 {
+	font-size: 1.1rem;
+	margin: 2.5rem 0 1rem;
+	padding: 0 0 0.35rem 0.6rem;
+	border-bottom: 2px solid var(--site-border);
+	border-left: 4px solid var(--site-accent);
+}
+
+.site main h3 {
+	font-size: 1rem;
+	margin: 1.5rem 0 0.4rem;
+}
+
+.site main p {
+	margin: 0.6rem 0;
+}
+
+/* blocky components */
+.site .panel {
+	background: var(--site-panel);
+	border: 1px solid var(--site-border);
+	box-shadow: var(--site-bevel);
+}
+
+.site .btn {
+	display: inline-block;
+	padding: 0.3rem 0.75rem;
+	background: var(--site-panel-raised);
+	border: 1px solid var(--site-border);
+	box-shadow: var(--site-bevel);
+	color: var(--site-accent);
+	text-decoration: none;
+	font-size: 0.9rem;
+}
+
+.site .btn:visited {
+	color: var(--site-accent);
+}
+
+.site .btn:hover {
+	background: var(--site-accent);
+	color: var(--site-accent-contrast);
+}
+
+.site .btn:active {
+	box-shadow: var(--site-bevel-pressed);
+}
+
+/* MarkdownViewer reads --fg and --font-mono, so remap them to the site
+   palette inside the content area. */
+.site main .md {
+	--fg: var(--site-fg);
+	--font-mono: var(--site-font);
+	padding: 0;
+	overflow-wrap: anywhere;
+}
+
+.site main .md a {
+	color: var(--site-accent);
+}
+
+@media (max-width: 40rem) {
+	.site main {
+		padding: 1.75rem 1rem 3.5rem;
+	}
+
+	.site main h1 {
+		font-size: 1.5rem;
+	}
+
+	.site main h2 {
+		margin-top: 2rem;
+	}
+}
+
+@media (pointer: coarse) {
+	.site .menu a {
+		display: flex;
+		align-items: center;
+		min-height: 2.75rem;
+		padding: 0 1rem;
+	}
+
+	.site .btn {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.75rem;
+		padding: 0 0.85rem;
+	}
+}

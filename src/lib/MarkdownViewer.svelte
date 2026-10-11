@@ -8,7 +8,11 @@
 		out = out.replace(/`([^`]+)`/g, '<code>$1</code>');
 		out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 		out = out.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-		out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+		out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label: string, url: string) => {
+			const external = /^https?:\/\//.test(url);
+			const attrs = external ? ' target="_blank" rel="external noopener noreferrer"' : '';
+			return `<a href="${url}"${attrs}>${label}</a>`;
+		});
 		return out;
 	}
 
