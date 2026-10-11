@@ -9,9 +9,7 @@
 		out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 		out = out.replace(/\*([^*]+)\*/g, '<em>$1</em>');
 		out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label: string, url: string) => {
-			const external = /^https?:\/\//.test(url);
-			const attrs = external ? ' target="_blank" rel="external noopener noreferrer"' : '';
-			return `<a href="${url}"${attrs}>${label}</a>`;
+			return `<a href="${url}">${label}</a>`;
 		});
 		return out;
 	}

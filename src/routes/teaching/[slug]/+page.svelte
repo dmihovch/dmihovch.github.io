@@ -13,9 +13,7 @@
 
 <div class="resource-links">
 	<a href={resolve('/teaching')}>← Teaching</a>
-	<a class="btn" rel="external noopener noreferrer" target="_blank" href={data.resource.githubUrl}
-		>View on GitHub ↗</a
-	>
+	<a class="btn" rel="external" href={data.resource.githubUrl}>View on GitHub ↗</a>
 </div>
 
 <MarkdownViewer name={data.resource.title} content={data.resource.content} />

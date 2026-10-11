@@ -43,21 +43,15 @@
 
 <ul class="meta">
 	<li>
-		<a class="btn" rel="external noopener noreferrer" target="_blank" href={profile.githubUrl}
-			>GitHub</a
-		>
+		<a class="btn" rel="external" href={profile.githubUrl}>GitHub</a>
 	</li>
 	<li>
-		<a class="btn" rel="external noopener noreferrer" target="_blank" href={profile.linkedinUrl}
-			>LinkedIn</a
-		>
+		<a class="btn" rel="external" href={profile.linkedinUrl}>LinkedIn</a>
 	</li>
 	<li><a class="btn" rel="external" href={profile.resumePdfSrc}>Resume</a></li>
 	<li><a class="btn" rel="external" href={profile.transcriptPdfSrc}>Transcript</a></li>
 	<li>
-		<a class="btn" rel="external noopener noreferrer" target="_blank" href={profile.youtubeUrl}
-			>YouTube</a
-		>
+		<a class="btn" rel="external" href={profile.youtubeUrl}>YouTube</a>
 	</li>
 </ul>
 

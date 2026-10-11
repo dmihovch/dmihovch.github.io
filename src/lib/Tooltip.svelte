@@ -19,7 +19,7 @@
 	<span class="popup" role="tooltip">
 		<span class="box">
 			<span class="blurb">{description}</span>
-			<a class="btn" rel="external noopener noreferrer" target="_blank" {href}>{linkText}</a>
+			<a class="btn" rel="external" {href}>{linkText}</a>
 		</span>
 	</span>
 </span>

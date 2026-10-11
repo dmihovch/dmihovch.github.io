@@ -82,11 +82,11 @@ A section with `custom: true` is skipped by the generic stub route and expects i
 
 ## Links
 
-Internal links use `resolve()` from `$app/paths`. External links carry `rel="external noopener noreferrer"` and `target="_blank"` so they open in a new tab.
+Internal links use `resolve()` from `$app/paths`. External links carry `rel="external"`. All links open in the same tab.
 
-`src/lib/MarkdownViewer.svelte` adds `target="_blank"` and `rel="external noopener noreferrer"` to `http(s)` links in teaching markdown. Relative links stay in the same tab.
+`src/lib/MarkdownViewer.svelte` renders `http(s)` links in teaching markdown as plain anchors that stay in the same tab.
 
-`src/lib/Tooltip.svelte` opens its link in a new tab and is used for external references in the tagline.
+`src/lib/Tooltip.svelte` is used for external references in the tagline.
 
 ## Fonts
 
