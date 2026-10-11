@@ -14,12 +14,7 @@
 		<article class="panel resource">
 			<h2><a href={resolve(`/teaching/${resource.slug}`)}>{resource.title}</a></h2>
 			<p>{resource.summary}</p>
-			<a
-				class="btn github"
-				rel="external noopener noreferrer"
-				target="_blank"
-				href={resource.githubUrl}>GitHub ↗</a
-			>
+			<a class="btn github" rel="external" href={resource.githubUrl}>GitHub ↗</a>
 		</article>
 	{/each}
 </SectionPage>
