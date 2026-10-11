@@ -1,35 +1,20 @@
-// Single source of truth for portfolio content. Edit this data to update
-// both views: the terminal filesystem (content.ts) and the normal site
-// pages read it.
-
-export type Project = {
-	name: string;
-	description: string;
-	githubUrl?: string;
-};
+// Single source of truth for the profile identity. Section content lives in
+// sections.ts.
 
 export type SiteProfile = {
 	name: string;
-	tagline: string;
 	githubUrl: string;
+	linkedinUrl: string;
+	youtubeUrl: string;
 	resumePdfSrc: string;
 	transcriptPdfSrc: string;
-	projects: Project[];
-	research: string;
 };
 
 export const profile: SiteProfile = {
-	name: 'daniel mihovch',
-	tagline: 'cs @ university of delaware',
+	name: 'Daniel Mihovch',
 	githubUrl: 'https://github.com/dmihovch',
+	linkedinUrl: 'https://www.linkedin.com/in/danielmihovch',
+	youtubeUrl: 'https://www.youtube.com/channel/UCCWsAt7zztAKf4Sm_1HX1Nw',
 	resumePdfSrc: '/Daniel_Mihovch_Resume.pdf',
-	transcriptPdfSrc: '/SSR_TSRPT.pdf',
-	projects: [
-		{
-			name: 'portfolio-terminal',
-			description: 'the site you are looking at\n\nsvelte, typescript',
-			githubUrl: 'https://github.com/dmihovch/dmihovch.github.io'
-		}
-	],
-	research: 'papers and work in progress'
+	transcriptPdfSrc: '/SSR_TSRPT.pdf'
 };
