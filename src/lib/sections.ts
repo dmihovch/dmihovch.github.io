@@ -15,7 +15,8 @@ export const sections: SiteSection[] = [
 	{
 		slug: 'research',
 		title: 'Research',
-		blurb: 'Papers and work in progress.'
+		blurb: 'Papers, work in progress, and presentations.',
+		custom: true
 	},
 	{
 		slug: 'teaching',
