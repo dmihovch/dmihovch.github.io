@@ -3,6 +3,7 @@
 
 export type SiteProfile = {
 	name: string;
+	codebergUrl: string;
 	githubUrl: string;
 	linkedinUrl: string;
 	youtubeUrl: string;
@@ -12,6 +13,7 @@ export type SiteProfile = {
 
 export const profile: SiteProfile = {
 	name: 'Daniel Mihovch',
+	codebergUrl: 'https://codeberg.org/danmih',
 	githubUrl: 'https://github.com/dmihovch',
 	linkedinUrl: 'https://www.linkedin.com/in/danielmihovch',
 	youtubeUrl: 'https://www.youtube.com/channel/UCCWsAt7zztAKf4Sm_1HX1Nw',

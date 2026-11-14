@@ -43,6 +43,9 @@
 
 <ul class="meta">
 	<li>
+		<a class="btn" rel="external" href={profile.codebergUrl}>Codeberg</a>
+	</li>
+	<li>
 		<a class="btn" rel="external" href={profile.githubUrl}>GitHub</a>
 	</li>
 	<li>
