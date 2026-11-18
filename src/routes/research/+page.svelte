@@ -9,8 +9,7 @@
 
 <SectionPage slug="research">
 	<ul class="presentations">
-		<li><a href="/research/long-slides.html">Long presentation</a></li>
-		<li><a href="/research/short-slides.html">Short presentation</a></li>
+		<li><a href="/research/short-slides.html">Benchmarking DGX Spark Presentation</a></li>
 	</ul>
 </SectionPage>
 
