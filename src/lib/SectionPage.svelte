@@ -8,13 +8,22 @@
 </script>
 
 {#if section}
-	<h1>{section.title}</h1>
-	<p class="blurb">{section.blurb}</p>
+	<header class="section-header">
+		<h1>{section.title}</h1>
+		<p class="blurb">{section.blurb}</p>
+	</header>
 	{@render children?.()}
 {/if}
 
 <style>
+	.section-header {
+		margin-bottom: 2rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid var(--site-border);
+	}
+
 	.blurb {
+		max-width: 70ch;
 		color: var(--site-muted);
 	}
 </style>

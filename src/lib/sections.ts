@@ -15,7 +15,7 @@ export const sections: SiteSection[] = [
 	{
 		slug: 'research',
 		title: 'Research',
-		blurb: 'Papers, work in progress, and presentations.',
+		blurb: 'Papers, posters, and presentations on machine learning, systems, and drone swarming.',
 		custom: true
 	},
 	{
@@ -28,7 +28,8 @@ export const sections: SiteSection[] = [
 	{
 		slug: 'projects',
 		title: 'Projects',
-		blurb: 'Things I build and maintain.'
+		blurb: 'Things I have/am building for my own pleasure and to explore topics/concepts I enjoy.',
+		custom: true
 	},
 	{
 		slug: 'course-work',
@@ -38,7 +39,8 @@ export const sections: SiteSection[] = [
 	{
 		slug: 'blog',
 		title: 'Blog',
-		blurb: 'Notes and longer posts.'
+		blurb: 'Notes and longer posts.',
+		custom: true
 	},
 	{
 		slug: 'about',

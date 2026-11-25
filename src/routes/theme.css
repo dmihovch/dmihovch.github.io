@@ -18,7 +18,10 @@
 	--site-bevel: inset 1px 1px 0 var(--site-edge-light), inset -1px -1px 0 var(--site-edge-dark);
 	--site-bevel-pressed:
 		inset -1px -1px 0 var(--site-edge-light), inset 1px 1px 0 var(--site-edge-dark);
+	--site-gutter: clamp(1.25rem, 4vw, 6rem);
 
+	display: flex;
+	flex-direction: column;
 	min-height: 100vh;
 	min-height: 100dvh;
 	background: var(--site-bg);
@@ -78,16 +81,20 @@
 
 .site .menu {
 	display: flex;
-	flex-wrap: wrap;
-	max-width: 52rem;
-	margin: 0 auto -1px;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: 2rem;
+	padding-inline: var(--site-gutter);
 }
 
 .site .menu a {
-	display: block;
-	padding: 0.7rem 1rem;
-	border-right: 1px solid var(--site-border);
-	border-bottom: 1px solid var(--site-border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3.75rem;
+	padding: 0.75rem 1rem;
+	border-bottom: 2px solid transparent;
+	white-space: nowrap;
 	color: var(--site-accent);
 	text-decoration: none;
 }
@@ -103,25 +110,42 @@
 
 .site .menu a[aria-current='page'] {
 	background: var(--site-panel-raised);
+	border-bottom-color: var(--site-accent);
 	color: var(--site-accent-strong);
 }
 
 .site .menu .brand {
+	flex-shrink: 0;
+	justify-content: flex-start;
+	padding-inline: 0;
+	background: none;
+	border-bottom-color: transparent;
+	color: var(--site-fg);
 	font-weight: 700;
+}
+
+.site .menu .brand:hover {
+	color: var(--site-accent-strong);
+}
+
+.site .menu-links {
+	display: flex;
 }
 
 /* content */
 .site main {
-	max-width: 52rem;
-	margin: 0 auto;
-	padding: 2.5rem 1.5rem 5rem;
+	flex: 1;
+	width: 100%;
+	min-width: 0;
+	padding: 2.5rem var(--site-gutter) 4rem;
 	overflow-wrap: break-word;
 }
 
 .site main h1 {
-	font-size: 1.7rem;
-	margin: 0 0 0.75rem;
-	letter-spacing: 0.01em;
+	font-size: clamp(2rem, 3vw, 3rem);
+	line-height: 1.2;
+	margin: 0 0 1rem;
+	letter-spacing: -0.02em;
 }
 
 .site main h2 {
@@ -149,8 +173,11 @@
 }
 
 .site .btn {
-	display: inline-block;
-	padding: 0.3rem 0.75rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem;
+	padding: 0.4rem 0.85rem;
 	background: var(--site-panel-raised);
 	border: 1px solid var(--site-border);
 	box-shadow: var(--site-bevel);
@@ -172,6 +199,52 @@
 	box-shadow: var(--site-bevel-pressed);
 }
 
+.site .btn-primary,
+.site .btn-primary:visited {
+	background: var(--site-accent);
+	border-color: var(--site-accent);
+	color: var(--site-accent-contrast);
+}
+
+.site .btn-primary:hover {
+	background: var(--site-accent-strong);
+	border-color: var(--site-accent-strong);
+}
+
+.site .skip-link {
+	position: fixed;
+	top: 0.75rem;
+	left: var(--site-gutter);
+	z-index: 100;
+	padding: 0.5rem 1rem;
+	transform: translateY(calc(-100% - 1rem));
+	background: var(--site-accent);
+	color: var(--site-accent-contrast);
+}
+
+.site .skip-link:focus {
+	transform: none;
+}
+
+.site .skip-link:visited {
+	color: var(--site-accent-contrast);
+}
+
+.site .site-footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 2rem;
+	padding: 1.25rem var(--site-gutter);
+	border-top: 1px solid var(--site-border);
+	color: var(--site-muted);
+	font-size: 0.8rem;
+}
+
+.site .site-footer > a {
+	margin-left: auto;
+}
+
 /* MarkdownViewer reads --fg and --font-mono, so remap them to the site
    palette inside the content area. */
 .site main .md {
@@ -185,32 +258,52 @@
 	color: var(--site-accent);
 }
 
-@media (max-width: 40rem) {
-	.site main {
-		padding: 1.75rem 1rem 3.5rem;
+@media (max-width: 64rem) {
+	.site .menu {
+		gap: 1rem;
 	}
 
-	.site main h1 {
-		font-size: 1.5rem;
+	.site .menu-links a {
+		padding-inline: 0.65rem;
+	}
+}
+
+@media (max-width: 48rem) {
+	.site .menu {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.site .menu .brand {
+		min-height: 3.25rem;
+	}
+
+	.site .menu-links {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		padding-bottom: 0.5rem;
+	}
+
+	.site .menu-links a {
+		min-height: 2.75rem;
+		padding: 0.5rem;
+		font-size: 0.9rem;
+	}
+
+	.site main {
+		padding-block: 2rem 3rem;
 	}
 
 	.site main h2 {
 		margin-top: 2rem;
 	}
-}
 
-@media (pointer: coarse) {
-	.site .menu a {
-		display: flex;
-		align-items: center;
-		min-height: 2.75rem;
-		padding: 0 1rem;
+	.site .site-footer {
+		gap: 0.5rem 1rem;
 	}
 
-	.site .btn {
-		display: inline-flex;
-		align-items: center;
-		min-height: 2.75rem;
-		padding: 0 0.85rem;
+	.site .site-footer > span:nth-child(2) {
+		order: 1;
+		width: 100%;
 	}
 }

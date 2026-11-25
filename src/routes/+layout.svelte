@@ -28,19 +28,28 @@
 </svelte:head>
 
 <div class="site">
+	<a class="skip-link" href="#main-content">Skip to content</a>
 	<header class="topbar">
-		<nav class="menu" aria-label="primary">
+		<nav class="menu" aria-label="Primary">
 			<a class="brand" href={resolve('/')} aria-current={isHome() ? 'page' : undefined}
 				>{profile.name}</a
 			>
-			{#each sections as section (section.slug)}
-				<a
-					href={resolve(`/${section.slug}`)}
-					aria-current={isSection(section.slug) ? 'page' : undefined}>{section.title}</a
-				>
-			{/each}
+			<div class="menu-links">
+				{#each sections as section (section.slug)}
+					<a
+						href={resolve(`/${section.slug}`)}
+						aria-current={isSection(section.slug) ? 'page' : undefined}>{section.title}</a
+					>
+				{/each}
+			</div>
 		</nav>
 	</header>
 
-	<main>{@render children()}</main>
+	<main id="main-content" tabindex="-1">{@render children()}</main>
+
+	<footer class="site-footer">
+		<span>{profile.name}</span>
+		<span>Computer Science <span aria-hidden="true">/</span> University of Delaware</span>
+		<a rel="external" href={profile.githubUrl}>GitHub ↗</a>
+	</footer>
 </div>

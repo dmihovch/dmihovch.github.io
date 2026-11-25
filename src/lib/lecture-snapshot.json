@@ -1,0 +1,165 @@
+{
+	"branch": "main",
+	"tree": [
+		{
+			"path": "PLAYGROUND",
+			"type": "tree"
+		},
+		{
+			"path": "PLAYGROUND/Makefile",
+			"type": "blob"
+		},
+		{
+			"path": "bash-intro",
+			"type": "tree"
+		},
+		{
+			"path": "bash-intro/cheatsheet.txt",
+			"type": "blob"
+		},
+		{
+			"path": "bash-intro/files",
+			"type": "tree"
+		},
+		{
+			"path": "bash-intro/long.py",
+			"type": "blob"
+		},
+		{
+			"path": "bash-intro/top.txt",
+			"type": "blob"
+		},
+		{
+			"path": "binary-make-c",
+			"type": "tree"
+		},
+		{
+			"path": "binary-make-c/binary",
+			"type": "tree"
+		},
+		{
+			"path": "binary-make-c/makefiles",
+			"type": "tree"
+		},
+		{
+			"path": "binary-make-c/pipeline-review",
+			"type": "tree"
+		},
+		{
+			"path": "gdb",
+			"type": "tree"
+		},
+		{
+			"path": "gdb/01-stepping.c",
+			"type": "blob"
+		},
+		{
+			"path": "gdb/02-callstack.c",
+			"type": "blob"
+		},
+		{
+			"path": "gdb/03-pointers.c",
+			"type": "blob"
+		},
+		{
+			"path": "gdb/04-array.c",
+			"type": "blob"
+		},
+		{
+			"path": "gdb/05-swap.c",
+			"type": "blob"
+		},
+		{
+			"path": "gdb/06-offbyone.c",
+			"type": "blob"
+		},
+		{
+			"path": "gdb/07-segfault.c",
+			"type": "blob"
+		},
+		{
+			"path": "gdb/Makefile",
+			"type": "blob"
+		},
+		{
+			"path": "gdb/README.md",
+			"type": "blob"
+		},
+		{
+			"path": "link-list",
+			"type": "tree"
+		},
+		{
+			"path": "link-list/class-linked-list.c",
+			"type": "blob"
+		},
+		{
+			"path": "link-list/complete-linked-list.c",
+			"type": "blob"
+		},
+		{
+			"path": "more-bash-and-basic-c",
+			"type": "tree"
+		},
+		{
+			"path": "more-bash-and-basic-c/bash-procs",
+			"type": "tree"
+		},
+		{
+			"path": "more-bash-and-basic-c/compiling",
+			"type": "tree"
+		},
+		{
+			"path": "more-bash-and-basic-c/exit-codes",
+			"type": "tree"
+		},
+		{
+			"path": "more-bash-and-basic-c/printf",
+			"type": "tree"
+		},
+		{
+			"path": "more-bash-and-basic-c/scanf",
+			"type": "tree"
+		},
+		{
+			"path": "more-bash-and-basic-c/vim-golf",
+			"type": "tree"
+		},
+		{
+			"path": "ptr-arith-structs",
+			"type": "tree"
+		},
+		{
+			"path": "ptr-arith-structs/00-ptr-arith.c",
+			"type": "blob"
+		},
+		{
+			"path": "ptr-arith-structs/01-structs.c",
+			"type": "blob"
+		},
+		{
+			"path": "ptr-arith-structs/Makefile",
+			"type": "blob"
+		},
+		{
+			"path": "scanf-is-weird",
+			"type": "tree"
+		},
+		{
+			"path": "scanf-is-weird/cheatsheet.txt",
+			"type": "blob"
+		},
+		{
+			"path": "scanf-is-weird/ex0.c",
+			"type": "blob"
+		},
+		{
+			"path": "scanf-is-weird/ex1.c",
+			"type": "blob"
+		},
+		{
+			"path": "scanf-is-weird/ex2.c",
+			"type": "blob"
+		}
+	]
+}
