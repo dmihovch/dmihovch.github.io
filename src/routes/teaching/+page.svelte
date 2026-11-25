@@ -10,19 +10,29 @@
 </svelte:head>
 
 <SectionPage slug="teaching">
-	{#each teachingResources as resource (resource.slug)}
-		<article class="panel resource">
-			<h2><a href={resolve(`/teaching/${resource.slug}`)}>{resource.title}</a></h2>
-			<p>{resource.summary}</p>
-			<a class="btn github" rel="external" href={resource.githubUrl}>GitHub ↗</a>
-		</article>
-	{/each}
+	<div class="resources">
+		{#each teachingResources as resource (resource.slug)}
+			<article class="panel resource">
+				<h2><a href={resolve(`/teaching/${resource.slug}`)}>{resource.title}</a></h2>
+				<p>{resource.summary}</p>
+				<a class="btn github" rel="external" href={resource.githubUrl}>GitHub ↗</a>
+			</article>
+		{/each}
+	</div>
 </SectionPage>
 
 <style>
+	.resources {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(28rem, 100%), 1fr));
+		gap: 1.5rem;
+	}
+
 	.resource {
-		margin-top: 1.5rem;
-		padding: 1rem 1.15rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 1.5rem;
 	}
 
 	.resource h2 {
@@ -31,10 +41,12 @@
 
 	.resource p {
 		margin: 0 0 0.75rem;
+		max-width: 64ch;
 		color: var(--site-muted);
 	}
 
 	.github {
+		margin-top: auto;
 		font-size: 0.85rem;
 	}
 </style>

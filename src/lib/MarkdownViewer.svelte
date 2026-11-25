@@ -20,7 +20,7 @@
 </script>
 
 <div class="md">
-	<div class="md-title">{name}</div>
+	<h1 class="md-title">{name}</h1>
 	{#each lines as line}
 		{@const trimmed = line.trim()}
 		{#if trimmed === ''}

@@ -12,63 +12,59 @@
 		linkText: string;
 		children: Snippet;
 	} = $props();
+
+	const id = $props.id();
 </script>
 
-<span class="tip">
-	<button type="button" class="term">{@render children()}</button>
-	<span class="popup" role="tooltip">
-		<span class="box">
-			<span class="blurb">{description}</span>
-			<a class="btn" rel="external" {href}>{linkText}</a>
-		</span>
+<span class="tip" style:--tip-anchor={`--tip-${id}`}>
+	<button type="button" class="term" popovertarget={id}>{@render children()}</button>
+	<span class="popup" {id} popover="auto">
+		<span class="blurb">{description}</span>
+		<a class="btn" rel="external" {href}>{linkText} ↗</a>
 	</span>
 </span>
 
 <style>
-	.tip {
-		position: relative;
-		display: inline-block;
-	}
-
 	.term {
+		anchor-name: var(--tip-anchor);
 		font: inherit;
 		color: var(--site-accent);
 		background: none;
 		border: 0;
 		padding: 0;
 		border-bottom: 1px dotted var(--site-accent);
-		cursor: help;
+		cursor: pointer;
 	}
-
-	/* padding, not margin, so the popup's hover area touches the term and the
-	   pointer can cross the visual gap without leaving the tooltip. */
+	.term:hover {
+		color: var(--site-accent-strong);
+		border-bottom-style: solid;
+	}
 	.popup {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		z-index: 20;
-		display: none;
-		padding-top: 0.4rem;
-	}
-
-	.tip:hover .popup,
-	.tip:focus-within .popup {
-		display: block;
-	}
-
-	.box {
-		display: block;
-		width: max-content;
-		max-width: min(18rem, calc(100vw - 3rem));
-		padding: 0.6rem 0.75rem;
+		width: min(22rem, calc(100vw - 2rem));
+		max-height: calc(100dvh - 2rem);
+		overflow: auto;
+		padding: 1rem;
 		background: var(--site-panel-raised);
 		border: 1px solid var(--site-border);
-		box-shadow: var(--site-bevel);
+		box-shadow:
+			var(--site-bevel),
+			0 0.5rem 2rem #0006;
+		color: var(--site-fg);
+		font-family: var(--site-font);
+		font-size: 0.95rem;
+		line-height: 1.65;
 	}
-
 	.blurb {
 		display: block;
-		margin-bottom: 0.6rem;
-		color: var(--site-fg);
+		margin-bottom: 0.85rem;
+	}
+	@supports (position-area: bottom) {
+		.popup {
+			position-anchor: var(--tip-anchor);
+			position-area: bottom span-right;
+			position-try-fallbacks: flip-inline, flip-block;
+			inset: auto;
+			margin: 0.5rem 0;
+		}
 	}
 </style>
